@@ -1,0 +1,9 @@
+# Some modifications for me
+
+export PATH=/usr/local/texlive/2010/bin/x86_64-linux:$HOME/Entwicklung/Android/android-sdk-linux/tools:$PATH:$HOME/bin
+export MAIL=$HOME/Mail/inbox/`date +"%y%m"`
+
+
+hash -d dev=$HOME/Entwicklung
+hash -d dok=$HOME/Dokumente
+
