@@ -45,7 +45,7 @@ then
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  plugins=(git screen debian)
+  plugins=(git screen debian yum systemd rsync repo)
 
   source $ZSH/oh-my-zsh.sh
 else
@@ -54,6 +54,9 @@ else
 fi
 
 # Customize to your needs...
+#
+
+alias sudo="nocorrect sudo"
 
 hash -d mr=$HOME/.config/mr
 
