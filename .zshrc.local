@@ -179,8 +179,8 @@ fi
 #alias -g H='|head'
 #alias -g Hl=' --help |& less -r'
 #alias -g K='|keep'
-#alias -g L='|less'
-#alias -g LL='|& less -r'
+alias -g L='|less'
+alias -g LL='|& less -r'
 #alias -g M='|most'
 #alias -g N='&>/dev/null'
 #alias -g R='| tr A-z N-za-m'
@@ -373,13 +373,21 @@ alias llh="ls --color=auto -altrh"
 
 
 if [ $TERM = rxvt-256color ] || [ $TERM = screen-256color ]; then
-	echo "Loading dircolors"
+	#echo "Loading dircolors"
 	eval `dircolors $HOME/.dircolors.256dark`
 else
-	echo "Not loading dircolors"
+	#echo "Not loading dircolors"
 fi
 
+# Name export
+export NAME="Christoph Heuel"
+export MAIL="christoph.heuel@novero.com"
 
+# Helpers
+alias inc_deb_ver='dch --force-distribution -D stable -p --distributor RANDOM --no-auto-nmu -i'
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
 ## Midgnight Commander Theme
 MC_SKIN=$HOME/.mc/lib/mc-solarized/solarized.ini

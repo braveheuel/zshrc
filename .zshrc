@@ -2232,7 +2232,7 @@ function grml_vcs_to_screen_title () {
 function grml_maintain_name () {
     # set hostname if not running on host with name 'grml'
     if [[ -n "$HOSTNAME" ]] && [[ "$HOSTNAME" != $(hostname) ]] ; then
-       NAME="@$HOSTNAME"
+       CNAME="@$HOSTNAME"
     fi
 }
 
@@ -2240,7 +2240,7 @@ function grml_cmd_to_screen_title () {
     # get the name of the program currently running and hostname of local
     # machine set screen window title if running in a screen
     if [[ "$TERM" == screen* ]] ; then
-        local CMD="${1[(wr)^(*=*|sudo|ssh|-*)]}$NAME"
+        local CMD="${1[(wr)^(*=*|sudo|ssh|-*)]}$CNAME"
         ESC_print ${CMD}
     fi
 }
