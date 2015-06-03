@@ -355,9 +355,9 @@ export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 
 #  {{{ Fedora shortcuts
-alias -g yi="sudo yum install"
-alias -g yu="sudo yum update"
-alias -g ys="yum search"
+alias -g yi="sudo dnf install"
+alias -g yu="sudo dnf update"
+alias -g ys="dnf search"
 # }}}
 # {{{ Aliases
 
@@ -372,12 +372,12 @@ alias llh="ls --color=auto -altrh"
 # }}}
 
 
-if [ $TERM = rxvt-256color ] || [ $TERM = screen-256color ]; then
-	#echo "Loading dircolors"
-	eval `dircolors $HOME/.dircolors.256dark`
-else
-	#echo "Not loading dircolors"
-fi
+#if [ $TERM = rxvt-256color ] || [ $TERM = screen-256color ]; then
+#	#echo "Loading dircolors"
+#eval `dircolors $HOME/.dircolors.256dark`
+#else
+#	#echo "Not loading dircolors"
+#fi
 
 # Name export
 export NAME="Christoph Heuel"
@@ -388,8 +388,5 @@ alias inc_deb_ver='dch --force-distribution -D stable -p --distributor RANDOM --
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
-
-## Midgnight Commander Theme
-MC_SKIN=$HOME/.mc/lib/mc-solarized/solarized.ini
 
 ## END OF FILE #################################################################
