@@ -389,4 +389,7 @@ alias inc_deb_ver='dch --force-distribution -D stable -p --distributor RANDOM --
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
+# Start keychain
+eval `keychain --eval id_rsa`
+
 ## END OF FILE #################################################################
