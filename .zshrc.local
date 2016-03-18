@@ -332,7 +332,7 @@ alias -g LL='|& less -r'
 #
 
 # Personal settings for CH
-export PATH=$PATH:$HOME/bin:/home/ch/Entwicklung/android/adt_20131030/sdk/platform-tools
+export PATH=$PATH:$HOME/bin
 export MAIL=$HOME/Mail/inbox/`date +"%y%m"`
 
 
@@ -340,22 +340,8 @@ hash -d dev=$HOME/Entwicklung
 hash -d dok=$HOME/Dokumente
 hash -d bbb=$HOME/Entwicklung/BeagleBoneBlack
 
-export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
-export LESS_TERMCAP_md=$(tput bold; tput setaf 6) # cyan
-export LESS_TERMCAP_me=$(tput sgr0)
-export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4) # yellow on blue
-export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
-export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7) # white
-export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
-export LESS_TERMCAP_mr=$(tput rev)
-export LESS_TERMCAP_mh=$(tput dim)
-export LESS_TERMCAP_ZN=$(tput ssubm)
-export LESS_TERMCAP_ZV=$(tput rsubm)
-export LESS_TERMCAP_ZO=$(tput ssupm)
-export LESS_TERMCAP_ZW=$(tput rsupm)
-
 #  {{{ Fedora shortcuts
-alias -g yi="sudo dnf install"
+alias -g yi="sudo dnf install -y"
 alias -g yu="sudo dnf update"
 alias -g ys="dnf search"
 # }}}
@@ -371,17 +357,7 @@ alias llh="ls --color=auto -altrh"
 
 # }}}
 
-
-#if [ $TERM = rxvt-256color ] || [ $TERM = screen-256color ]; then
-#	#echo "Loading dircolors"
-#eval `dircolors $HOME/.dircolors.256dark`
-#else
-#	#echo "Not loading dircolors"
-#fi
-
-# Name export
-export NAME="Christoph Heuel"
-export MAIL="christoph.heuel@novero.com"
+eval `dircolors $HOME/.dir_colors`
 
 # Helpers
 alias inc_deb_ver='dch --force-distribution -D stable -p --distributor RANDOM --no-auto-nmu -i'
