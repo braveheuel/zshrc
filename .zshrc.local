@@ -357,7 +357,7 @@ alias llh="ls --color=auto -altrh"
 
 # }}}
 
-eval `dircolors $HOME/.dir_colors`
+[ -x /usr/bin/keychain ] && eval `dircolors $HOME/.dir_colors`
 
 # Helpers
 alias inc_deb_ver='dch --force-distribution -D stable -p --distributor RANDOM --no-auto-nmu -i'
@@ -366,6 +366,6 @@ alias inc_deb_ver='dch --force-distribution -D stable -p --distributor RANDOM --
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
 # Start keychain
-eval `keychain --eval id_rsa`
+[ -x /usr/bin/keychain ] && eval `keychain --eval id_rsa`
 
 ## END OF FILE #################################################################
