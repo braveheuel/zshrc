@@ -354,6 +354,7 @@ alias targc="tar -cxvf"
 alias tarbx="tar --bzip2 -xvf"
 alias tarbc="tar --bzip2 -cvf"
 alias llh="ls --color=auto -altrh"
+alias sshnoch="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
 # }}}
 
