@@ -36,9 +36,8 @@ alias -g LL='|& less -r'
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 export MAIL=$HOME/Mail/inbox/`date +"%y%m"`
 
-hash -d dev=$HOME/Entwicklung
+hash -d dev=$HOME/devel
 hash -d dok=$HOME/Dokumente
-hash -d bbb=$HOME/Entwicklung/BeagleBoneBlack
 alias -g yi="sudo dnf install -y"
 alias -g yu="sudo dnf update"
 alias -g ys="dnf search"
