@@ -49,7 +49,7 @@ alias targx="tar -zxvf"
 alias targc="tar -cxvf"
 alias tarbx="tar --bzip2 -xvf"
 alias tarbc="tar --bzip2 -cvf"
-alias llh="ls --color=auto -altrh"
+alias l="ls --color=auto -altrh"
 alias sshnoch="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
 # }}}
@@ -58,6 +58,18 @@ alias sshnoch="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
 # Helpers
 alias inc_deb_ver='dch --force-distribution -D stable -p --distributor RANDOM --no-auto-nmu -i'
+
+if [ -n "$TMUX" ]; then
+	function refresh {
+		eval $(tmux show-environment -s)
+	}
+else
+	function refresh { }
+fi
+
+function preexec {
+        refresh
+}
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
