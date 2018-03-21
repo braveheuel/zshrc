@@ -53,7 +53,10 @@ alias sshnoch="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
 # }}}
 
-[ -x /usr/bin/dircolors ] && eval `dircolors $HOME/.dir_colors`
+if [ -e $HOME/.dir_colors ];
+then
+	[ -x /usr/bin/dircolors ] && eval `dircolors $HOME/.dir_colors`
+fi
 
 # Helpers
 alias inc_deb_ver='dch --force-distribution -D stable -p --distributor RANDOM --no-auto-nmu -i'
