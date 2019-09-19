@@ -50,6 +50,7 @@ alias tarbx="tar --bzip2 -xvf"
 alias tarbc="tar --bzip2 -cvf"
 alias l="ls --color=auto -altrh"
 alias sshnoch="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+alias g="git"
 
 # }}}
 
@@ -77,4 +78,4 @@ function preexec {
 [ -f $HOME/.zshrc.local.workplace ] && source "$HOME/.zshrc.local.workplace"
 
 # Start keychain
-[ -x /usr/bin/keychain ] && eval `keychain --eval id_rsa`
+[ -x /usr/bin/keychain ] && eval `keychain --agents ssh --eval id_rsa`
