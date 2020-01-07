@@ -9,9 +9,6 @@ if [ -r ~/.zshrc -a -r ~/.zshrc.global -a ! -r ~/.zshrc.local ] ; then
     printf '-!-\n'
 fi
 
-## ignore ~/.ssh/known_hosts entries
-alias insecssh='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null" -o "PreferredAuthentications=keyboard-interactive"'
-
 ## global aliases (for those who like them) ##
 
 #alias -g '...'='../..'
@@ -30,7 +27,8 @@ alias -g LL='|& less -r'
 #alias -g SL='| sort | less'
 #alias -g S='| sort'
 #alias -g T='|tail'
-#alias -g V='| vim -'
+alias -g V='| vim -'
+alias -g g='git'
 
 # Personal settings for CH
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
@@ -49,7 +47,6 @@ alias targc="tar -cxvf"
 alias tarbx="tar --bzip2 -xvf"
 alias tarbc="tar --bzip2 -cvf"
 alias l="ls --color=auto -altrh"
-alias sshnoch="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
 # }}}
 
@@ -57,9 +54,6 @@ if [ -e $HOME/.dir_colors ];
 then
 	[ -x /usr/bin/dircolors ] && eval `dircolors $HOME/.dir_colors`
 fi
-
-# Helpers
-alias inc_deb_ver='dch --force-distribution -D stable -p --distributor RANDOM --no-auto-nmu -i'
 
 if [ -n "$TMUX" ]; then
 	function refresh {
