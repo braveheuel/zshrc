@@ -77,3 +77,6 @@ function preexec {
 
 # Start keychain
 [ -x /usr/bin/keychain ] && eval `keychain --agents ssh --eval id_rsa`
+
+# Minicom
+export MINICOM="-m -c on"
